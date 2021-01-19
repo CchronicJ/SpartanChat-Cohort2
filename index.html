@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Websocket Chat Practice</title>
+  <input id="TheTextBoxThatWillGetUsAllBannedAtSchoolAndSmitedByThePricipals" type="text" size="50" value="21"></input>
+  <button onclick="iWishIDidntHaveToGoToSchoolAndSuffer()">Hello Noobs</button>
+  <script defer type="text/javascript">
+    var ws = new WebSocket('ws://172.21.3.7:81')
+    ws.onopen = function() {
+      console.log("Connection Established")
+    }
+    ws.onmessage = function(message) {
+      console.log(message.data)
+      document.getElementById("Gemes").innerHTML += message.data + '<br><br>'
+    }
+
+    function iWishIDidntHaveToGoToSchoolAndSuffer() {
+      document.getElementById("TheTextBoxThatWillGetUsAllBannedAtSchoolAndSmitedByThePricipals").innerHTML;
+      console.log(TheTextBoxThatWillGetUsAllBannedAtSchoolAndSmitedByThePricipals.value)
+      var SavedThisData = TheTextBoxThatWillGetUsAllBannedAtSchoolAndSmitedByThePricipals.value
+      ws.send(SavedThisData)
+    }
+  </script>
+</head>
+
+<body>
+  <div id="Gemes">
+  </div>
+</body>
+
+</html>
